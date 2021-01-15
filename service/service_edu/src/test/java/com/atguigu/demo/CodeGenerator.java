@@ -1,5 +1,8 @@
 package com.atguigu.demo;
 
+import com.alibaba.excel.EasyExcel;
+import com.atguigu.demo.excel.DemoDate;
+import com.atguigu.demo.excel.ExcelListenter;
 import com.baomidou.mybatisplus.annotation.DbType;
 import com.baomidou.mybatisplus.annotation.IdType;
 import com.baomidou.mybatisplus.generator.AutoGenerator;
@@ -10,6 +13,9 @@ import com.baomidou.mybatisplus.generator.config.StrategyConfig;
 import com.baomidou.mybatisplus.generator.config.rules.DateType;
 import com.baomidou.mybatisplus.generator.config.rules.NamingStrategy;
 import org.junit.Test;
+
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * @author
@@ -58,7 +64,7 @@ public class CodeGenerator {
 
         // 5、策略配置
         StrategyConfig strategy = new StrategyConfig();
-        strategy.setInclude("edu_teacher");
+        strategy.setInclude("edu_subject");
         strategy.setNaming(NamingStrategy.underline_to_camel);//数据库表映射到实体的命名策略
         strategy.setTablePrefix(pc.getModuleName() + "_"); //生成实体时去掉表前缀
 
@@ -73,5 +79,32 @@ public class CodeGenerator {
 
         // 6、执行
         mpg.execute();
+    }
+
+
+    @Test
+    public void excel(){
+        String filename = "D:\\write.xlsx";
+        EasyExcel.write(filename, DemoDate.class).sheet("学生").doWrite(getDate());
+    }
+
+
+    private static List<DemoDate> getDate(){
+        ArrayList<DemoDate> arrayList = new ArrayList<>();
+        for (int i = 0; i <10 ; i++) {
+            DemoDate date = new DemoDate();
+            date.setMno(i);
+            date.setMname("as");
+            arrayList.add(date);
+        }
+        return arrayList;
+
+    }
+
+
+    @Test
+    public void excelread(){
+        String filename = "D:\\write.xlsx";
+        EasyExcel.read(filename, DemoDate.class,new ExcelListenter()).sheet("学生").doRead();
     }
 }

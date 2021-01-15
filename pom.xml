@@ -4,7 +4,6 @@
     <modelVersion>4.0.0</modelVersion>
     <modules>
         <module>service</module>
-        <module>service</module>
         <module>common</module>
     </modules>
     <parent>
@@ -188,6 +187,7 @@
                 <artifactId>canal.client</artifactId>
                 <version>${canal.client.version}</version>
             </dependency>
+
         </dependencies>
     </dependencyManagement>
     <build>

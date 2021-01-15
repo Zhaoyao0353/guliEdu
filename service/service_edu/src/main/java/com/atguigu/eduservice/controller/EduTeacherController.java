@@ -26,9 +26,10 @@ import java.util.List;
  * @author testjava
  * @since 2020-12-13
  */
-@Api(description = "讲师管理")
+//@Api(description = "讲师管理")
 @RestController
-@RequestMapping("/eduservice/edu-teacher")
+@RequestMapping("/eduservice/teacher")
+@CrossOrigin
 public class EduTeacherController {
 
     @Autowired
@@ -97,6 +98,7 @@ public class EduTeacherController {
             wrapper.le("gmt_create",end);
         }
 
+        wrapper.orderByDesc("gmt_create");
         teacherService.page(page,wrapper);
 
         long total = page.getTotal();
@@ -118,17 +120,18 @@ public class EduTeacherController {
 
     //根据讲师id进行查询
     @GetMapping("getTeacher/{id}")
-    public R getTeacher(String id){
-        EduTeacher byId = teacherService.getById(id);
-        return R.ok().data("teacher",byId);
+    public R getTeacher(@PathVariable String id) {
+        EduTeacher eduTeacher = teacherService.getById(id);
+        return R.ok().data("teacher",eduTeacher);
     }
 
+    //讲师修改功能
     @PostMapping("updateTeacher")
-    public R updateTeacher(@RequestBody EduTeacher eduTeacher){
+    public R updateTeacher(@RequestBody EduTeacher eduTeacher) {
         boolean flag = teacherService.updateById(eduTeacher);
-        if (flag){
+        if(flag) {
             return R.ok();
-        }else {
+        } else {
             return R.error();
         }
     }
