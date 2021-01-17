@@ -8,6 +8,7 @@ import com.aliyuncs.vod.model.v20170321.GetPlayInfoRequest;
 import com.aliyuncs.vod.model.v20170321.GetPlayInfoResponse;
 import com.aliyuncs.vod.model.v20170321.GetVideoPlayAuthRequest;
 import com.aliyuncs.vod.model.v20170321.GetVideoPlayAuthResponse;
+import org.junit.Test;
 
 import java.util.List;
 
@@ -76,5 +77,51 @@ public class TestVod {
         }
         //Base信息
         System.out.print("VideoBase.Title = " + response.getVideoBase().getTitle() + "\n");
+    }
+
+
+    @Test
+    public void main(){
+        String demo="<script>\n" +
+                "2\n" +
+                "export default {\n" +
+                "3\n" +
+                "  data () {\n" +
+                "4\n" +
+                "    return {\n" +
+                "5\n" +
+                "      swiperOption: {\n" +
+                "6\n" +
+                "        //配置分页\n" +
+                "7\n" +
+                "        pagination: {\n" +
+                "8\n" +
+                "          el: '.swiper-pagination'//分页的dom节点\n" +
+                "9\n" +
+                "        },\n" +
+                "10\n" +
+                "        //配置导航\n" +
+                "11\n" +
+                "        navigation: {\n" +
+                "12\n" +
+                "          nextEl: '.swiper-button-next',//下一页dom节点\n" +
+                "13\n" +
+                "          prevEl: '.swiper-button-prev'//前一页dom节点\n" +
+                "14\n" +
+                "        }\n" +
+                "15\n" +
+                "      }\n" +
+                "16\n" +
+                "    }\n" +
+                "17\n" +
+                "  }\n" +
+                "18\n" +
+                "}\n" +
+                "19\n" +
+                "</script>";
+        String[] split = demo.split("\n");
+        for (int i = 0; i < split.length; i+=2) {
+            System.out.println(split[i]);
+        }
     }
 }
