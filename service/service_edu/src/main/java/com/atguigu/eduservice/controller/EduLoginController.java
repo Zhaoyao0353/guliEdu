@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("/eduservice/user")
-@CrossOrigin  //解决跨域
+//@CrossOrigin  //解决跨域 ->gateway CorsConfig
 public class EduLoginController {
     //login
     @PostMapping("login")

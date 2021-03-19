@@ -15,7 +15,12 @@
         <module>service_edu</module>
         <module>service_vod</module>
         <module>service_oss</module>
-        <module>service-cms</module>
+        <module>service_cms</module>
+        <module>service_msm</module>
+        <module>service_ucenter</module>
+        <module>service_order</module>
+        <module>service_statistics</module>
+        <module>service_acl</module>
     </modules>
 
     <dependencies>
@@ -127,5 +132,15 @@
     </dependencies>
 
 
-
+    <build>
+        <resources>
+            <resource>
+                <directory>src/main/java</directory>
+                <includes>
+                    <include>**/*.xml</include>
+                </includes>
+                <filtering>false</filtering>
+            </resource>
+        </resources>
+    </build>
 </project>

@@ -21,7 +21,7 @@ import java.awt.*;
  */
 @RestController
 @RequestMapping("/educms/banneradmin")
-@CrossOrigin
+//@CrossOrigin
 public class BannerAdminController {
 
     @Autowired

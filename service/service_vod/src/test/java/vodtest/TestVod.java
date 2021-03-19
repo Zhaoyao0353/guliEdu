@@ -15,8 +15,8 @@ import java.util.List;
 public class TestVod {
 
     public static void main(String[] args) throws Exception {
-        String accessKeyId = "LTAI4G29sMQFk7Mb2BgPDPuG";
-        String accessKeySecret = "mDDBEejz6yarPS58PLlX4OJH3thg4l";
+        String accessKeyId = "";
+        String accessKeySecret = "";
 
         String title = "6 - What If I Want to Move Faster - upload by sdk";   //上传之后文件名称
         String fileName = "D:\\IntelliJ IDEA Work\\guliEdu\\项目资料\\1-阿里云上传测试视频/6 - What If I Want to Move Faster.mp4";  //本地文件路径和名称

@@ -20,7 +20,7 @@ import javax.ws.rs.POST;
 
 @RestController
 @RequestMapping("/eduoss/fileoss")
-@CrossOrigin
+//@CrossOrigin
 public class OssController {
 
 
