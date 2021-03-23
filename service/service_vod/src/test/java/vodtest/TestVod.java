@@ -50,7 +50,7 @@ public class TestVod {
         GetVideoPlayAuthRequest request = new GetVideoPlayAuthRequest();
         GetVideoPlayAuthResponse response = new GetVideoPlayAuthResponse();
 
-        request.setVideoId("16d0b8966997428d9497b09711c187e1");
+        request.setVideoId("");
 
         response = client.getAcsResponse(request);
         System.out.println("playAuth:"+response.getPlayAuth());
@@ -65,7 +65,7 @@ public class TestVod {
         GetPlayInfoResponse response = new GetPlayInfoResponse();
 
         //向request对象里面设置视频id
-        request.setVideoId("16d0b8966997428d9497b09711c187e1");
+        request.setVideoId("");
 
         //调用初始化对象里面的方法，传递request，获取数据
         response = client.getAcsResponse(request);
